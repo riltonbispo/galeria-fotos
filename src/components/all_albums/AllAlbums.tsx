@@ -7,25 +7,38 @@ interface Album {
   title: string
 }
 
+interface Photo {
+  albumId: number,
+  thumbnailUrl: string
+}
+
 const AllAlbums = () => {
 
   const [albums, setAlbums] = useState<Album[]>([])
+  const [photos, setPhotos] = useState<Photo[]>([])
 
   useEffect(() =>{
     const fetchData = async () => {
-      const result = await api.getAllAlbums()
-      setAlbums(result)
+      const resultAlbums = await api.getAllAlbums()
+      const resultPhotos = await api.getPhotos()
+      setAlbums(resultAlbums)
+      setPhotos(resultPhotos)
     }
     fetchData()
   },[])
 
   return (
     <div>
-      {albums.map((album) => (
+      {albums.map((album, index) => (
         <div key={album.id}>
-          <Link to={`/album/${album.id}`} >{album.title}</Link>
+          <Link to={`/album/${album.id}`} >
+            <div>
+              {album.title}
+              <img src={photos[index].thumbnailUrl} alt="" />
+            </div>
+          </Link>
         </div>
-      ))}
+      ))} 
     </div>
   );
 };

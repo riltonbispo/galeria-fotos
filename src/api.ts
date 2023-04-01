@@ -21,6 +21,11 @@ const api = {
     return response.data
   },
 
+  getPhotos: async () => {
+    let response = await http.get('/photos')
+    return response.data
+  },
+
   getPhotoDetails: async (albumId : string) => {
     let response = await http.get(`/photos/${albumId}`)
     return response.data
