@@ -4,7 +4,7 @@ const http = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com'
 })
 
-export const api = {
+const api = {
 
   getAllAlbums: async () => {
     let response = await http.get('/albums')
@@ -27,3 +27,5 @@ export const api = {
   },
 
 }
+
+export default api
