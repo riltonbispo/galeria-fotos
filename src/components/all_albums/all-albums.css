@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  align-items: center;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  gap: 30px;
+  padding: 10px;
+}
+
+.card:hover {
+  background-color: rgb(248, 248, 248);
+}

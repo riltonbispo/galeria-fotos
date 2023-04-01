@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../../api'
+import './all-albums.css'
 
 interface Album {
   id: number,
@@ -32,8 +33,9 @@ const AllAlbums = () => {
       {albums.map((album, index) => (
         <div key={album.id}>
           <Link to={`/album/${album.id}`} >
-            <div>
+            <div className='card'>
               {album.title}
+              <span>{index+1}</span>
               <img src={photos[index].thumbnailUrl} alt="" />
             </div>
           </Link>
