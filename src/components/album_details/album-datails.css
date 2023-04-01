@@ -1,0 +1,22 @@
+.album-title {
+  text-align: center;
+}
+
+.all-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding-top: 40px;
+}
+
+.card-photo {
+  border: 2px solid black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-photo:hover {
+  background-color: rgb(248, 248, 248);
+}

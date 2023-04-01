@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 import api from "../../api";
 import ButtonBack from "../buttuns/ButtonBack";
+import "./album-datails.css";
 
 interface AlbumDetails {
   id: number;
@@ -13,7 +14,7 @@ interface Photo {
   id: number;
   title: string;
   url: string;
-  thumbnailUrl: string
+  thumbnailUrl: string;
 }
 
 const Album = () => {
@@ -37,14 +38,18 @@ const Album = () => {
 
   return (
     <div>
-      <h1>{albumDetails?.title}</h1>
+      <h1 className="album-title">{albumDetails?.title}</h1>
       <ButtonBack />
-      {photos.map((photo) => (
-        <Link to={`photo/${photo.id}`} >
-          <h5>{photo.title}</h5>
-          <img src={photo.thumbnailUrl} alt="" />
-        </Link>
-      ))}
+      <div className="all-card">
+        {photos.map((photo) => (
+          <Link to={`photo/${photo.id}`}>
+            <div className="card-photo">
+              <img src={photo.thumbnailUrl} alt="" />
+              <h5>{photo.title}</h5>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
