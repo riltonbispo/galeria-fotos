@@ -1,6 +1,6 @@
-import AlbumList from '../components/albumlist/AlbumList';
-import Album from '../components/album/Album';
-import Photo from '../components/photo/Photo';
+import AlbumList from '../components/all_albums/AllAlbums';
+import Album from '../components/album_details/AlbumDetails';
+import Photo from '../components/photo_details/PhotoDetails';
 
 import { useRoutes } from 'react-router-dom';
 
