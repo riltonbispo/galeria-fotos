@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import api from "../../api";
+import ButtonBack from "../buttuns/ButtonBack";
 
 interface AlbumDetails {
   id: number;
@@ -17,7 +18,6 @@ interface Photo {
 
 const Album = () => {
   const { albumId } = useParams<{ albumId: string }>();
-  const navigate = useNavigate()
 
   const [albumDetails, setAlbumDeails] = useState<AlbumDetails>();
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -35,14 +35,10 @@ const Album = () => {
     fetchData();
   }, []);
 
-  const handleBackButton = () =>{
-    navigate(-1)
-  }
-
   return (
     <div>
       <h1>{albumDetails?.title}</h1>
-      <button onClick={handleBackButton} >voltar</button>
+      <ButtonBack />
       {photos.map((photo) => (
         <Link to={`photo/${photo.id}`} >
           <h5>{photo.title}</h5>
