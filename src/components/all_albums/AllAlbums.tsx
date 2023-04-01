@@ -29,7 +29,7 @@ const AllAlbums = () => {
   },[])
 
   return (
-    <div>
+    <div className='container'>
       {albums.map((album, index) => (
         <div key={album.id}>
           <Link to={`/album/${album.id}`} >
