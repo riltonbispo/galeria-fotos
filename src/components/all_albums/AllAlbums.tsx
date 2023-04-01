@@ -7,7 +7,7 @@ interface Album {
   title: string
 }
 
-const AlbumList = () => {
+const AllAlbums = () => {
 
   const [albums, setAlbums] = useState<Album[]>([])
 
@@ -30,4 +30,4 @@ const AlbumList = () => {
   );
 };
 
-export default AlbumList;
+export default AllAlbums;

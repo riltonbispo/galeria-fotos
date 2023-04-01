@@ -1,5 +1,5 @@
 
-const Photo = () => {
+const PhotoDetails = () => {
   return (
     <div>
       Olá
@@ -7,4 +7,4 @@ const Photo = () => {
   );
 };
 
-export default Photo;
+export default PhotoDetails;

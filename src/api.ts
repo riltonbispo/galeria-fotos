@@ -11,17 +11,17 @@ const api = {
     return response.data
   },
   
-  getAlbumDetails: async (albumId : number) => {
+  getAlbumDetails: async (albumId : string) => {
     let response = await http.get(`/albums/${albumId}`)
     return response.data
   },
 
-  getAllPhotos: async (albumId : number) => {
+  getAllPhotos: async (albumId : string) => {
     let response = await http.get(`/albums/${albumId}/photos`)
     return response.data
   },
 
-  getPhotoDetails: async (albumId : number) => {
+  getPhotoDetails: async (albumId : string) => {
     let response = await http.get(`/photos/${albumId}`)
     return response.data
   },
